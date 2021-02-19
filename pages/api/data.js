@@ -4,7 +4,7 @@ import neatCsv from 'neat-csv'
 const handler = async (req, res) => {
     console.log('query: ', req.query)
 
-    fs.readFile('./pages/cities.csv', async (err, data) => {
+    fs.readFile('./public/cities.csv', async (err, data) => {
         if (err) {
           console.error(err)
           return
