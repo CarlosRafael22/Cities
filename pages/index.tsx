@@ -10,7 +10,7 @@ export default function Home() {
     const field = window?.location?.search
 
     const getFilteredData = async (field: string) => {
-      const response: any = await fetch(`https://cities-beryl.vercel.app/api/data?orderByField=${field}`)
+      const response: any = await fetch(`http://localhost:3000/api/data?orderByField=${field}`)
       const data = await response.json()
       setCitiesData(data.cities)
     }
