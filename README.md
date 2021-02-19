@@ -5,4 +5,4 @@ The vercel link(not working yet):
 
 How the simple Table looked like:
 
-![Table](pages/public/print.jpeg)
+![Table](https://github.com/CarlosRafael22/Cities/blob/main/public/print.jpeg)
