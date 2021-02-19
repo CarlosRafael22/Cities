@@ -1,10 +1,30 @@
-import styled from 'styled-components'
-
-const Title = styled.h1`
-  color: red;
-  font-size: 50px;
-`
+import { useEffect, useState } from 'react'
+import CityTable from '../src/components/CityTable'
 
 export default function Home() {
-  return <Title>My page</Title>
+  const [citiesData, setCitiesData] = useState([])
+  // const field = window?.location?.search
+  // console.log('FIELD: ', field)
+
+  useEffect(() => {
+    const field = window?.location?.search
+
+    const getFilteredData = async (field: string) => {
+      const response: any = await fetch(`http://localhost:3000/api/data?orderByField=${field}`)
+      const data = await response.json()
+      setCitiesData(data.cities)
+    }
+    getFilteredData(field)
+  }, [])
+
+  return (
+    <>
+    {(citiesData.length === 0) ? (
+        <p>Loading</p>
+      ) : (
+        <CityTable cities={citiesData} />
+      )
+    }
+    </>
+  )
 }
