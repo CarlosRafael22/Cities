@@ -19,13 +19,15 @@ export type CityTableProps = {
 
 const CityTable = ({ cities }: CityTableProps) => (
   <Style.Table>
+    <Style.Body>
     {cities.map(city => (
       <Style.Row>
-        {Object.values(city).map(data => (
-          <Style.Data>{data}</Style.Data>
+        {Object.values(city).map((data, index) => (
+          <Style.Data key={`city_${index}`}>{data}</Style.Data>
         ))}
       </Style.Row>
     ))}
+    </Style.Body>
   </Style.Table>
 )
 export default CityTable
