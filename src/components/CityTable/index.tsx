@@ -1,26 +1,27 @@
 import * as Style from './styles'
 
 export type CityProps = {
-  city: string,
-  country: string,
-  buildings: number,
-  plus100: number,
-  plus150: number,
-  plus200: number,
-  plus300: number,
-  telecomTowers: number,
-  totalStructures: number
+  '#': string,
+  'City': string,
+  'Country': string,
+  'All\nBuildings': string,
+  '100m+': string,
+  '150m+': string,
+  '200m+': string,
+  '300m+': string,
+  'Telecom\nTowers': string,
+  'All\nStructures': string
 }
 
 export type CityTableProps = {
-  cities: Array<Array<string | number>>
+  cities: Array<CityProps>
 }
 
 const CityTable = ({ cities }: CityTableProps) => (
   <Style.Table>
     {cities.map(city => (
       <Style.Row>
-        {city.map(data => (
+        {Object.values(city).map(data => (
           <Style.Data>{data}</Style.Data>
         ))}
       </Style.Row>

@@ -11,7 +11,29 @@ const Template: Story<CityTableProps> = (args) => <CityTable {...args} />
 export const Default = Template.bind({})
 Default.args = {
   cities: [
-    [2,"New York City","United States","1,390",803,257,66,7,2,"1,398"],
-    [1,"Hong Kong","China",820,555,317,64,6,0,820]
+    {
+      '#': '54',
+      City: 'London',
+      Country: 'United Kingdom',
+      'All\nBuildings': '263',
+      '100m+': '59',
+      '150m+': '17',
+      '200m+': '5',
+      '300m+': '1',
+      'Telecom\nTowers': '5',
+      'All\nStructures': '272'
+    },
+    {
+      '#': '68',
+      City: 'Brisbane',
+      Country: 'Australia',
+      'All\nBuildings': '97',
+      '100m+': '60',
+      '150m+': '13',
+      '200m+': '5',
+      '300m+': '0',
+      'Telecom\nTowers': '0',
+      'All\nStructures': '97'
+    },
   ]
 }
